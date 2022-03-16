@@ -79,6 +79,7 @@ let scoreTotal = document.querySelector(".score .total");
 let finishMessage = document.querySelector(".finish");
 let checkboxEle = document.getElementsByName("dif");
 let instruction = document.querySelector(".instruction");
+let playAgain = document.querySelector(".play-again");
 
 // setting level name + seconds + score
 lvlNameSpan.innerHTML = defaultLvlName;
@@ -87,6 +88,10 @@ timeLeftSpan.innerHTML = defaultLvlSeconds;
 scoreTotal.innerHTML = words.length;
 
 // setting instruction
+let instructionName = document.createElement("div");
+instructionName.innerHTML = `instruction`;
+instructionName.style.color = "#2196f3";
+instruction.appendChild(instructionName);
 for (let i = 0; i < Object.keys(lvls).length; i++) {
   let div = document.createElement("div");
   div.innerHTML = `if you choose <span>[${
@@ -186,6 +191,11 @@ function startPlay() {
           finishMessage.appendChild(span);
           //remove upcoming words
           upcomingWords.remove();
+          // play again button
+          playAgain.style.display = "block";
+          playAgain.onclick = function () {
+            location.reload();
+          };
           // // add data to local storage
           // saveToLs();
         }
@@ -195,6 +205,11 @@ function startPlay() {
         let spanTxt = document.createTextNode("Game Over");
         span.append(spanTxt);
         finishMessage.appendChild(span);
+        // play again button
+        playAgain.style.display = "block";
+        playAgain.onclick = function () {
+          location.reload();
+        };
         // // add data to local storage
         // saveToLs();
       }

@@ -111,6 +111,7 @@ body {
   justify-content: space-between;
   background-color: white;
   padding: 15px;
+  margin-bottom: 20px;
 }
 .control span {
   font-weight: bold;
@@ -132,10 +133,22 @@ body {
   background-color: white;
   padding: 15px;
   border-radius: 5px;
+  margin-top: 10px;
 }
 .instruction div:not(:last-child) {
   margin-bottom: 10px;
 }
 .instruction div span {
   color: #2196f3;
+}
+.play-again {
+  color: white;
+  background-color: var(--main-color);
+  width: fit-content;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px auto 0;
+  cursor: pointer;
+  font-weight: bold;
+  display: none;
 }
